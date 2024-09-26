@@ -1,0 +1,423 @@
+/* Global Styles */
+:root {
+    --primary-color: rgb(241, 102, 34); /* Orange color */
+    --text-color: rgb(255, 255, 255);   /* White color */
+    --secondary-color: #54595F;
+    --accent-color: #61CE70;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Roboto Slab', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--secondary-color);
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eaeaea;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: var(--secondary-color);
+    margin-bottom: 4px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('hero-image.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 0 6rem 0;
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    margin-top: 70px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-family: var(--font-secondary);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: rgb(216, 92, 31);
+}
+
+/* Campaign Section */
+.campaign {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+.campaign h2 {
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* Steps */
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.step:nth-child(even) .step-content {
+    order: 2;
+}
+
+.step:nth-child(even) .step-image {
+    order: 1;
+}
+
+.step-content {
+    flex: 1;
+    padding: 1rem;
+}
+
+.step-image {
+    flex: 1;
+    padding: 1rem;
+}
+
+.step-image img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.step h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.step p,
+.step ol {
+    color: var(--secondary-color);
+}
+
+.step ol {
+    list-style: decimal inside;
+}
+
+.step ol li {
+    margin-bottom: 0.5rem;
+}
+
+/* Video Section */
+.video-section {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.video-section h3 {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-family: var(--font-secondary);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background-color: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 4rem 0;
+}
+
+.benefits h2 {
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.benefits-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.benefits-list li::before {
+    content: '✔';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Customer Journey Section */
+.customer-journey {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+.customer-journey h2 {
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* Partner Invitation Section */
+.partner-invitation {
+    padding: 4rem 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.partner-invitation h2 {
+    font-family: var(--font-secondary);
+    margin-bottom: 1rem;
+}
+
+.partner-invitation p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.partner-benefits {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.partner-benefits li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.partner-benefits li::before {
+    content: '✔';
+    color: var(--text-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.partner-invitation .btn-primary {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+.partner-invitation .btn-primary:hover {
+    background-color: #ddd;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 0;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.contact-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .step {
+        flex-direction: column;
+    }
+
+    .step:nth-child(even) .step-content,
+    .step:nth-child(even) .step-image {
+        order: 0;
+    }
+
+    .step-content,
+    .step-image {
+        padding: 0;
+    }
+
+    .partner-benefits {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('banner 2.png'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10rem 0 6rem 0;
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    margin-top: 70px;
+}
