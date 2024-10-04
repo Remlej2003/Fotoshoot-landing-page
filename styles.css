@@ -421,3 +421,21 @@ body {
     position: relative;
     margin-top: 70px;
 }
+
+.step-number {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
